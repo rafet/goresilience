@@ -1,4 +1,4 @@
-module github.com/slok/goresilience
+module github.com/rafet/goresilience
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
