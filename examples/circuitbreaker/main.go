@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/slok/goresilience/circuitbreaker"
-	"github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/circuitbreaker"
+	"github.com/rafet/goresilience/errors"
 )
 
 func errorOnOddMinute(ctx context.Context) error {

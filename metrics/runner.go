@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/slok/goresilience"
+	"github.com/rafet/goresilience"
 )
 
 var ctxRecorderKey contextKey = "recorder"

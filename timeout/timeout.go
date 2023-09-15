@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/errors"
-	"github.com/slok/goresilience/metrics"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/errors"
+	"github.com/rafet/goresilience/metrics"
 )
 
 const (

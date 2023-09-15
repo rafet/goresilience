@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/slok/goresilience/concurrencylimit"
-	"github.com/slok/goresilience/concurrencylimit/limit"
-	mexecute "github.com/slok/goresilience/internal/mocks/concurrencylimit/execute"
-	mlimit "github.com/slok/goresilience/internal/mocks/concurrencylimit/limit"
+	"github.com/rafet/goresilience/concurrencylimit"
+	"github.com/rafet/goresilience/concurrencylimit/limit"
+	mexecute "github.com/rafet/goresilience/internal/mocks/concurrencylimit/execute"
+	mlimit "github.com/rafet/goresilience/internal/mocks/concurrencylimit/limit"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

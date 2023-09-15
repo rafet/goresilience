@@ -5,12 +5,12 @@ import (
 	"testing"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/bulkhead"
-	"github.com/slok/goresilience/circuitbreaker"
-	"github.com/slok/goresilience/metrics"
-	"github.com/slok/goresilience/retry"
-	"github.com/slok/goresilience/timeout"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/bulkhead"
+	"github.com/rafet/goresilience/circuitbreaker"
+	"github.com/rafet/goresilience/metrics"
+	"github.com/rafet/goresilience/retry"
+	"github.com/rafet/goresilience/timeout"
 )
 
 var allokf = func(_ context.Context) error { return nil }

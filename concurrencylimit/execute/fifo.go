@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/errors"
 )
 
 // FIFOConfig is the configuration for the FIFO limiter.

@@ -2,7 +2,7 @@
 
 package mocks
 
-import limit "github.com/slok/goresilience/concurrencylimit/limit"
+import limit "github.com/rafet/goresilience/concurrencylimit/limit"
 import mock "github.com/stretchr/testify/mock"
 import time "time"
 

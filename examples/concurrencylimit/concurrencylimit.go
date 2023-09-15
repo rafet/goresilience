@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/slok/goresilience/concurrencylimit"
-	"github.com/slok/goresilience/concurrencylimit/limit"
+	"github.com/rafet/goresilience/concurrencylimit"
+	"github.com/rafet/goresilience/concurrencylimit/limit"
 )
 
 const times = 100000

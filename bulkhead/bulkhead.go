@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/errors"
-	"github.com/slok/goresilience/metrics"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/errors"
+	"github.com/rafet/goresilience/metrics"
 )
 
 // Config is the configuration of the Bulkhead runner.
@@ -53,7 +53,8 @@ func New(cfg Config) goresilience.Runner {
 }
 
 // NewMiddleware returns a new middleware for the runner that returns
-//  bulkhead.New.
+//
+//	bulkhead.New.
 func NewMiddleware(cfg Config) goresilience.Middleware {
 	cfg.defaults()
 

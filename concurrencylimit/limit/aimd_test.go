@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/slok/goresilience/concurrencylimit/limit"
+	"github.com/rafet/goresilience/concurrencylimit/limit"
 	"github.com/stretchr/testify/assert"
 )
 

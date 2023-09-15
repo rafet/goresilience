@@ -11,7 +11,7 @@ package goresilience
 import (
 	"context"
 
-	"github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/errors"
 )
 
 // Func is the function to execute with resilience.

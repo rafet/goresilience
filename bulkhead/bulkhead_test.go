@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/bulkhead"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/bulkhead"
 )
 
 func TestBulkheadTimeout(t *testing.T) {

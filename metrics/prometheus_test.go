@@ -11,7 +11,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/goresilience/metrics"
+	"github.com/rafet/goresilience/metrics"
 )
 
 func TestPrometheus(t *testing.T) {

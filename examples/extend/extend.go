@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/retry"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/retry"
 )
 
 // Config is the configuration of constFailer

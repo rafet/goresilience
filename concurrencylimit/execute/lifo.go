@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/errors"
 )
 
 // LIFOConfig is the configuration for the LIFO executor.

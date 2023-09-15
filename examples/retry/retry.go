@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/slok/goresilience/retry"
+	"github.com/rafet/goresilience/retry"
 )
 
 func main() {

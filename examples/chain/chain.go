@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/slok/goresilience"
-	"github.com/slok/goresilience/bulkhead"
-	"github.com/slok/goresilience/retry"
-	"github.com/slok/goresilience/timeout"
+	"github.com/rafet/goresilience"
+	"github.com/rafet/goresilience/bulkhead"
+	"github.com/rafet/goresilience/retry"
+	"github.com/rafet/goresilience/timeout"
 )
 
 func main() {

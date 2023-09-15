@@ -3,8 +3,8 @@ package concurrencylimit
 import (
 	"context"
 
-	"github.com/slok/goresilience/concurrencylimit/limit"
-	"github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/concurrencylimit/limit"
+	"github.com/rafet/goresilience/errors"
 )
 
 // ExecutionResultPolicy is the function that will have the responsibility of

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/slok/goresilience/chaos"
+	"github.com/rafet/goresilience/chaos"
 )
 
 func errorOnOddMinute(ctx context.Context) error {

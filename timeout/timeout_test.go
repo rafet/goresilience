@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/goresilience"
-	grerrors "github.com/slok/goresilience/errors"
-	"github.com/slok/goresilience/timeout"
+	"github.com/rafet/goresilience"
+	grerrors "github.com/rafet/goresilience/errors"
+	"github.com/rafet/goresilience/timeout"
 )
 
 func TestTimeout(t *testing.T) {
@@ -57,7 +57,7 @@ func TestTimeout(t *testing.T) {
 			name: "A command that has been cancelled should not continue and don't let the function panic.",
 			cfg: timeout.Config{
 				Timeout: 1,
-				Cancel: true,
+				Cancel:  true,
 			},
 			f: func(ctx context.Context) error {
 				time.Sleep(1 * time.Millisecond)

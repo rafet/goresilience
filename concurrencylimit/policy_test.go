@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/slok/goresilience/concurrencylimit"
-	"github.com/slok/goresilience/concurrencylimit/limit"
-	goresilienceerrors "github.com/slok/goresilience/errors"
+	"github.com/rafet/goresilience/concurrencylimit"
+	"github.com/rafet/goresilience/concurrencylimit/limit"
+	goresilienceerrors "github.com/rafet/goresilience/errors"
 	"github.com/stretchr/testify/assert"
 )
 

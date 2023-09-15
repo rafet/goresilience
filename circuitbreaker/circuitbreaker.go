@@ -2,12 +2,12 @@ package circuitbreaker
 
 import (
 	"context"
-	"github.com/slok/goresilience"
+	"github.com/rafet/goresilience"
 	"sync"
 	"time"
 
-	"github.com/slok/goresilience/errors"
-	"github.com/slok/goresilience/metrics"
+	"github.com/rafet/goresilience/errors"
+	"github.com/rafet/goresilience/metrics"
 )
 
 type State string
