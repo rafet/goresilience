@@ -2,20 +2,20 @@ package circuitbreaker
 
 import (
 	"context"
+	"github.com/slok/goresilience"
 	"sync"
 	"time"
 
-	"github.com/slok/goresilience"
 	"github.com/slok/goresilience/errors"
 	"github.com/slok/goresilience/metrics"
 )
 
-type state string
+type State string
 
 const (
-	stateOpen     state = "open"
-	stateHalfOpen state = "halfopen"
-	stateClosed   state = "closed"
+	stateOpen     State = "open"
+	stateHalfOpen State = "halfopen"
+	stateClosed   State = "closed"
 )
 
 // Config is the configuration of the circuit breaker.
@@ -44,6 +44,13 @@ type Config struct {
 	// MetricsBucketDuration is the duration for a bucket to store the metrics that collects,
 	// This way the circuit will have a window of N buckets of T duration each.
 	MetricsBucketDuration time.Duration
+	// OnStateChange is a callback that will be executed when the circuit breaker changes its state.
+	// This can be used to log or monitor the state changes.
+	OnStateChange func(from, to State)
+	// OnCircuitOpen is a callback that will be executed when the circuit breaker opens.
+	OnCircuitOpen func(from State)
+	// OnCircuitClose is a callback that will be executed when the circuit breaker closes.
+	OnCircuitClose func(from State)
 }
 
 // defaults will use the default settings from Netflix Hystrix.
@@ -77,7 +84,7 @@ func (c *Config) defaults() {
 type circuitbreaker struct {
 	cfg          Config
 	recorder     recorder
-	state        state
+	state        State
 	stateStarted time.Time
 	mu           sync.Mutex
 	runner       goresilience.Runner
@@ -205,7 +212,7 @@ func (c *circuitbreaker) execute(ctx context.Context, f goresilience.Func) error
 
 }
 
-func (c *circuitbreaker) getState() state {
+func (c *circuitbreaker) getState() State {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 	return c.state
@@ -217,12 +224,19 @@ func (c *circuitbreaker) sinceStateStart() time.Duration {
 	return time.Since(c.stateStarted)
 }
 
-func (c *circuitbreaker) moveState(state state, metricsRec metrics.Recorder) {
+func (c *circuitbreaker) moveState(state State, metricsRec metrics.Recorder) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
 	// Only change if the state changed.
 	if c.state != state {
+		defer c.cfg.OnStateChange(c.state, state)
+		if state == stateOpen {
+			defer c.cfg.OnCircuitOpen(c.state)
+		} else if state == stateClosed {
+			defer c.cfg.OnCircuitClose(c.state)
+		}
+
 		metricsRec.IncCircuitbreakerState(string(state))
 
 		c.state = state
